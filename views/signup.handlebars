@@ -1,0 +1,26 @@
+<div class="container">
+  <div style="max-width: 500px;margin:auto;" class="shadow-sm px-4 py-3 my-5">
+    <div class="fs-3 mb-3 mt-2">Sign Up</div>
+    <form method="POST" action="/auth/signup" class="d-flex flex-column width my-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="name" aria-label="name" name="name">
+        </div>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="email" aria-label="email" name="email">
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="password" aria-label="password" name="password">
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="repeat-password" aria-label="repeat-password">
+        </div>
+        <div class="input-group mb-3">
+            <input type="tel" class="form-control" placeholder="telephone" aria-label="telephone" name="telephone">
+        </div>
+        <div class="input-group">
+        <input type="submit" value="submit" class="form-control"/>
+        </div>
+    </form>
+    <div>Already have an account ? <a href="/login">Sign in</a></div>
+  </div>
+</div>
