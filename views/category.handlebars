@@ -1,0 +1,16 @@
+<div class="container">
+<div class="mt-5 mb-3 fs-2 fw-semibold">
+    {{category}}
+</div>
+<div class="py-5">
+    {{#each products}}
+    <div class="col shadow-sm p-2" style="max-width:250px;">
+        <div class="position-relative mb-2"><div class="position-absolute text-white end-0 px-1 bg-dark rounded-sm">{{this.category}}</div>
+        <img src="{{this.photoURL}}" alt="" class="img-fluid z-n1"></div>
+        <div>{{this.name}}</div>
+        <div class="fw-semibold fs-5 mb-2">&#8377;{{this.price}}</div>
+        <button type="button" class="btn btn-primary">Add to cart</button>
+    </div>
+    {{/each}}
+    </div>
+</div>
