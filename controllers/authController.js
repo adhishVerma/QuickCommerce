@@ -51,7 +51,6 @@ const login = async (req, res) => {
   // compare password
   if (user && bcrypt.compare(password, user.password)) {
     res.cookie("accessToken", generateToken(user._id));
-    res.cookie("name", user.name);
     res.redirect("/");
   } else {
     res.status(403).json("Credentials invalid");
