@@ -11,7 +11,7 @@ const productSchema = mongoose.Schema(
             required : [true, "please enter the price"],
         },
         category : {
-            type : Number,
+            type : String,
             required : [true, "please enter the category"]
         },
         details : {
@@ -28,4 +28,4 @@ const productSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('User', productSchema)
+module.exports = mongoose.model('Product', productSchema)

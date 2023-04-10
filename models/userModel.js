@@ -18,7 +18,8 @@ const userSchema = mongoose.Schema(
             type : Number
         },
         cart : {
-            type : Map
+            type : Map,
+            default : {}
         }
     },
     {

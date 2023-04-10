@@ -3,8 +3,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dunzo - {{ title }}</title>
-    <link rel="shortcut icon" href="favicon-32.png" type="image/x-icon" />
+    <title>{{title}} - Dunzo</title>
+    <link rel="shortcut icon" href="/favicon-32.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,33 +25,47 @@
         >
           <div style="width: 96px">
             <a href="/"><img
-              src="logo-7b2b540792556466133aea6e7c6ae513.webp"
-              class="img-fluid"
-            /></a>
+                src="/logo-7b2b540792556466133aea6e7c6ae513.webp"
+                class="img-fluid"
+              /></a>
           </div>
           <div class="menu d-flex">
+            <a href="/search" style="text-decoration: none; color:inherit">
             <div
               style="width: 24px; margin-right: 44px"
               class="d-flex flex-column align-items-center"
             >
-              <img src="search-interface-symbol.png" class="img-fluid" />
+              <img src="/search-interface-symbol.png" class="img-fluid" />
               <div>Search</div>
-            </div>
-            <div
-              style="width: 24px; margin-right: 44px"
-              class="d-flex flex-column align-items-center"
-            >
-              <img src="shopping-cart.png" class="img-fluid" />
-              <div>Cart</div>
-            </div>
-            <a href="/login" style="text-decoration: none;color:inherit">
-            <div
-              style="width: 24px"
-              class="d-flex flex-column align-items-center"
-            >
-              <img src="user.png" class="img-fluid" />
-              <div>SignIn</div>
             </div></a>
+            <a href="/order/cart" style="text-decoration: none;color:inherit">
+              <div
+                style="width: 24px; margin-right: 44px"
+                class="d-flex flex-column align-items-center"
+              >
+                <img src="/shopping-cart.png" class="img-fluid" />
+                <div>Cart</div>
+              </div></a>
+            {{#if isLoggedIn}}
+                <div
+                  style="width: 24px"
+                  class="d-flex flex-column align-items-center"
+                >
+                  <img src="/user.png" class="img-fluid" />
+                <a href="/auth/logout" style="text-decoration: none;color:inherit">
+                  <div>SignOut</div>
+                </div></a>
+            {{else}}
+              <a href="/login" style="text-decoration: none;color:inherit">
+                <div
+                  style="width: 24px"
+                  class="d-flex flex-column align-items-center"
+                >
+                  <img src="/user.png" class="img-fluid" />
+                  <div>SignIn</div>
+                </div></a>
+            {{/if}}
+
           </div>
         </div>
         <div
@@ -70,7 +84,7 @@
       </div>
 
       <!-- Main section -->
-      <div style="background-color: #f1f1f1;">
+      <div style="background-color: #f1f1f1;" class="flex-grow-1">
         {{{body}}}
       </div>
       <!-- Footer section -->
@@ -96,7 +110,7 @@
         >
           <div class="column" style="max-width: 118px">
             <img
-              src="logo-footer-9f5c4da498fff7fcbead38344d855d20.webp"
+              src="/logo-footer-9f5c4da498fff7fcbead38344d855d20.webp"
               class="img-fluid"
             />
           </div>
@@ -123,18 +137,19 @@
           </div>
           <div class="column mb-3" style="width: 200px">
             <img
-              src="footer-mascot-0a94653a7991194aa18773ec353d7fb6.webp"
+              src="/footer-mascot-0a94653a7991194aa18773ec353d7fb6.webp"
               class="img-fluid"
             />
           </div>
         </div>
       </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
+    <script src="/javascript/app.js"></script>
   </body>
 </html>
