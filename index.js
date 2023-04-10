@@ -3,6 +3,7 @@ require("dotenv").config();
 const authRoutes = require("./routes/authRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const productRoutes = require("./routes/productRoutes");
+const searchRoutes = require("./routes/searchRoutes");
 const Product = require("./models/productModel.js");
 const app = express();
 const expbs = require("express-handlebars");
@@ -24,6 +25,7 @@ app.use(express.static("public"));
 app.use("/auth", authRoutes);
 app.use("/order", orderRoutes);
 app.use("/product", productRoutes);
+app.use("/search", searchRoutes);
 
 app.get("/", (req, res) => {
   if (req.headers.cookie && req.headers.cookie.startsWith("accessToken")) {
@@ -62,8 +64,14 @@ app.get("/category/:category", async (req, res) => {
     }
   }
   const capitalCat = category.charAt(0).toUpperCase() + category.slice(1);
-  res.render("category", { category: capitalCat, title: capitalCat, products });
+  const isLoggedIn = req.headers.cookie
+  res.render("category", { category: capitalCat, title: capitalCat, products, isLoggedIn });
 });
+
+app.get("/search", async(req,res) => {
+    const isLoggedIn = req.headers.cookie
+    res.render("search", {title : "search", isLoggedIn})
+}) 
 
 const PORT = process.env.PORT || 6500;
 app.listen(PORT, () => {

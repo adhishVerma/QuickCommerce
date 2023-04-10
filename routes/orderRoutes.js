@@ -13,8 +13,7 @@ router.route('/cart').post(protect, addToCart)
 router.route('/cart').delete(protect, removeFromCart)
 
 // checkout
-router.route('/checkout').post(checkout)
+router.route('/checkout').post(protect,checkout)
 
-// order status
 
 module.exports = router

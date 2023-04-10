@@ -16,7 +16,15 @@
             <img src="{{this.photoURL}}" alt="" class="img-fluid"/>
             </div></div>
             <div class="flex-grow-1" style="min-width: 180px;">{{this.name}}</div>
-            <div class="text-end" style="min-width: 180px;">{{this.quantity}}</div>
+            <div class="text-end" style="max-width: 120px;">
+                <div class="input-group input-group-sm flex-nowrap">
+                    <span class="input-group-text">
+                    <button data-id="m{{this.id}}" type="qty" class="btn" style="max-width:6px">-</button></span>
+                    <input id="{{this.id}}" type="text" class="form-control" value="{{this.quantity}}"/>
+                    <span class="input-group-text">
+                    <button data-id="p{{this.id}}" type="qty" class="btn" style="max-width:6px">+</button></span>
+                </div>
+                </div>
             <div class="text-end" style="min-width: 180px;">{{this.price}}</div>
             <div class="text-end" style="min-width: 180px;">{{this.total}}</div>
             <div class="remove-btn d-flex justify-content-center" style="min-width: 180px;">
