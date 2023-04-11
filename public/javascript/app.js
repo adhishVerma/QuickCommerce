@@ -52,9 +52,16 @@ $('button[type="remove-cart"]').on("click", function (e) {
 $('button[type="qty"]').on("click", function () {
   const buttonId = $(this).data("id");
   const productId = buttonId.slice(1);
-  const input = $(`input#${productId}`);
-  input.value += 1;
-  console.log(input);
+  const input = $(`input[id=${productId}]`);
+  if (buttonId.startsWith('p')){
+      input.val(Number(input.val())+1)
+  }else if(buttonId.startsWith('m')){
+    if(input.val() < 2){
+
+    }else{
+        input.val(Number(input.val())-1)
+    }
+  }
 });
 
 const productTemplate = (name, id, price, photo) => {
